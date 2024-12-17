@@ -22,9 +22,9 @@ while True:
                 with open (nome+'.txt','r')  as file:
                     conteudo=file.read()
                     print(conteudo)
-            except FileNotFoundError:
-                with open ('gerenciamento_erros.log','w') as log :
-                    log.write("\nErro ao tentar abrir arquivo,não existente\n")
+            except Exception as e:
+                with open ('gerenciamento_erros.log','a') as log :
+                    log.write(f"\nErro ao abrir:{str(e)}\n")
                 print('\nArquivo não existente')
                 pass
             
@@ -40,10 +40,11 @@ while True:
                     with open (nome+'.txt','w')  as file:
                         file.write(input('\nDigite o que deseja adicionar ao arquivo:\n'))
 
-                except FileNotFoundError:
+                except Exception as e:
                     with open ('gerenciamento_erros.log','a') as log :
-                        log.write("\nErro ao tentar abrir arquivo para editar,não existente\n")
+                        log.write(f"\nErro ao abrir:{str(e)}\n")
                     print('\nArquivo não existente')
+                    pass
                     
             if num == 2 :
                 
@@ -53,10 +54,11 @@ while True:
                         
                         file.write(input('\nDigite o que deseja adicionar ao arquivo:\n'))
 
-                except FileNotFoundError:
+                except Exception as e:
                     with open ('gerenciamento_erros.log','a') as log :
-                        log.write("\nErro ao tentar abrir arquivo para editar,não existente\n")
+                        log.write(f"\nErro ao abrir:{str(e)}\n")
                     print('\nArquivo não existente')
+                    pass
         case 4 :
             print('Saindo do programa')
             break
