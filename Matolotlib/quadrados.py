@@ -6,3 +6,4 @@ plt.scatter(xdata,ydata,s=100,c=ydata,cmap=plt.cm.Blues)
 
 
 plt.show()
+
