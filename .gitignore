@@ -25,3 +25,6 @@ Thumbs.db
 
 # Ignore other common directories
 node_modules/
+
+# Ignore the Aulas directory
+Aulas/
